@@ -14,4 +14,3 @@ A Multiplayer Tic Tac Toe Game
 3. Socket (socket.io v4)
 
 Live Host: https://multi-tac.netlify.app/
-Author: @tam11a
