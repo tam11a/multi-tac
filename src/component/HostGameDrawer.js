@@ -7,18 +7,18 @@ import {
   ListItemText,
   OutlinedInput,
   Stack,
-  SwipeableDrawer,
+  Drawer,
   Typography,
 } from "@mui/material";
 import React from "react";
 import theme from "./theme";
 import { MdClose } from "react-icons/md";
 import { AiOutlineLink } from "react-icons/ai";
-import { IoGameControllerOutline } from "react-icons/io5";
+import { IoCreateOutline, IoGameControllerOutline } from "react-icons/io5";
 
-const JoinGameDrawer = ({ drawer, setDrawer }) => {
+const HostGameDrawer = ({ drawer, setDrawer }) => {
   return (
-    <SwipeableDrawer
+    <Drawer
       anchor="bottom"
       open={drawer}
       onClose={() => setDrawer(false)}
@@ -40,10 +40,10 @@ const JoinGameDrawer = ({ drawer, setDrawer }) => {
         spacing={2}
       >
         <IconButton color="primary" component="span">
-          <AiOutlineLink />
+          <IoCreateOutline />
         </IconButton>
         <Typography variant="button" flexGrow={1}>
-          Join A Game
+          Host New Game
         </Typography>
         <IconButton
           color="primary"
@@ -62,9 +62,9 @@ const JoinGameDrawer = ({ drawer, setDrawer }) => {
       <List>
         <ListItem>
           <Typography variant="body2">
-            Join with an existing Room ID from your friend who invited you to
-            join. If you are permitted to Join, you will be able to join else,
-            you have to wait till your friend gives you permission.
+            Create a new game. Share the Room URL or Room ID from the game with
+            your friend to invite and permit them to join. Two person can join
+            in a game room only.
           </Typography>
         </ListItem>
         <Divider
@@ -101,9 +101,9 @@ const JoinGameDrawer = ({ drawer, setDrawer }) => {
         <form>
           <ListItem>
             <Stack direction={"column"} width={"100%"}>
-              <ListItemText secondary={"Room ID or URL"} />
+              <ListItemText secondary={"Create New Room ID"} />
               <OutlinedInput
-                placeholder="Room ID or URL"
+                placeholder="Create New Room ID"
                 fullWidth
                 sx={{ mt: 1 }}
               />
@@ -111,13 +111,13 @@ const JoinGameDrawer = ({ drawer, setDrawer }) => {
           </ListItem>
           <ListItem>
             <Button variant="contained" fullWidth type="submit">
-              Join
+              Host
             </Button>
           </ListItem>
         </form>
       </List>
-    </SwipeableDrawer>
+    </Drawer>
   );
 };
 
-export default JoinGameDrawer;
+export default HostGameDrawer;
