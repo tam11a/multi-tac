@@ -18,6 +18,7 @@ function App() {
     >
       <Box
         sx={{
+          position: "relative",
           mx: "auto",
           bgcolor: theme.palette.background.main,
           height: "100vh",
@@ -25,6 +26,20 @@ function App() {
           maxWidth: theme.breakpoints.values.md,
           overflow: "hidden",
           boxShadow: "0 0 20px #00000088",
+          overflowY: "auto",
+
+          "::-webkit-scrollbar ": {
+            width: "8px",
+          },
+          "::-webkit-scrollbar-track": {
+            background: theme.palette.background.dark,
+          },
+          "::-webkit-scrollbar-thumb": {
+            background: `${theme.palette.background.main}88`,
+          },
+          "::-webkit-scrollbar-thumb:hover": {
+            background: `${theme.palette.background.main}bb`,
+          },
         }}
       >
         <PageRoute />

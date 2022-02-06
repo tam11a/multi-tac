@@ -5,6 +5,7 @@ const primary = "#FFEB50";
 const secondary = "#FFFFFF";
 const black = "#282c34";
 const blackDark = "#15191e";
+const blackLight = "#33373E";
 
 // breakpoints
 const breakpoints = {
@@ -33,6 +34,7 @@ const theme = createTheme({
     background: {
       main: black,
       dark: blackDark,
+      light: blackLight,
     },
     text: {
       primary: secondary,
