@@ -1,26 +1,43 @@
-import { Box, Button, Stack, Typography, IconButton } from "@mui/material";
+import { Button, Stack, Typography, IconButton } from "@mui/material";
 import React from "react";
 import { AiOutlineLink } from "react-icons/ai";
 import { IoCreateOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import ProfileDrawer from "../component/ProfileDrawer";
+import NotificationDrawer from "../component/NotificationDrawer";
 
 const Home = () => {
+  // state
   const [drawer, setDrawer] = React.useState(false);
+  const [nDrawer, setNDrawer] = React.useState(false);
+  // render
   return (
     <>
-      <IconButton
-        color="primary"
-        sx={{
-          fontSize: "1.7rem",
-          position: "absolute",
-          top: "1rem",
-          right: "1rem",
-        }}
-        onClick={() => setDrawer(true)}
+      <Stack
+        direction="row"
+        sx={{ position: "absolute", top: "1rem", right: "1rem" }}
+        spacing={1}
       >
-        <FiUser />
-      </IconButton>
+        <IconButton
+          color="primary"
+          sx={{
+            fontSize: "1.7rem",
+          }}
+          onClick={() => setNDrawer(true)}
+        >
+          <IoMdNotificationsOutline />
+        </IconButton>
+        <IconButton
+          color="primary"
+          sx={{
+            fontSize: "1.7rem",
+          }}
+          onClick={() => setDrawer(true)}
+        >
+          <FiUser />
+        </IconButton>
+      </Stack>
       <Stack
         direction={"column"}
         alignItems={"center"}
@@ -43,6 +60,7 @@ const Home = () => {
         </Typography>
       </Stack>
       <ProfileDrawer drawer={drawer} setDrawer={setDrawer} />
+      <NotificationDrawer drawer={nDrawer} setDrawer={setNDrawer} />
     </>
   );
 };
