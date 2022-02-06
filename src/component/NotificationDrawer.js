@@ -8,12 +8,12 @@ import {
 import React from "react";
 import theme from "./theme";
 import { MdClose } from "react-icons/md";
-import { FiUser } from "react-icons/fi";
+import { IoMdNotificationsOutline } from "react-icons/io";
 
-const ProfileDrawer = ({ drawer, setDrawer }) => {
+const NotificationDrawer = ({ drawer, setDrawer }) => {
   return (
     <SwipeableDrawer
-      anchor="right"
+      anchor="left"
       open={drawer}
       onClose={() => setDrawer(false)}
       onOpen={() => setDrawer(true)}
@@ -35,20 +35,19 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
         <IconButton
           color="primary"
           component="span"
-          onClick={() => setDrawer(false)}
+          // onClick={() => setDrawer(false)}
         >
-          <MdClose />
+          <IoMdNotificationsOutline />
         </IconButton>
         <Typography variant="button" flexGrow={1}>
-          Profile
+          Notifications
         </Typography>
         <IconButton
           color="primary"
           component="span"
-          // onClick={() => setDrawer(false)}
+          onClick={() => setDrawer(false)}
         >
-          <FiUser />
-          {/* <FiSettings /> */}
+          <MdClose />
         </IconButton>
       </Stack>
       <Divider
@@ -61,4 +60,4 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
   );
 };
 
-export default ProfileDrawer;
+export default NotificationDrawer;
