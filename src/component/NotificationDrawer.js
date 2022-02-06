@@ -1,4 +1,5 @@
 import {
+  Button,
   Divider,
   IconButton,
   Stack,
@@ -7,7 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import theme from "./theme";
-import { MdClose } from "react-icons/md";
+import { MdClose, MdOutlineDoneAll } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
 const NotificationDrawer = ({ drawer, setDrawer }) => {
@@ -56,6 +57,7 @@ const NotificationDrawer = ({ drawer, setDrawer }) => {
           borderWidth: "1px",
         }}
       />
+      <Button startIcon={<MdOutlineDoneAll />}>Mark All As Read</Button>
     </SwipeableDrawer>
   );
 };

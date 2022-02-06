@@ -6,11 +6,13 @@ import { FiUser } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import ProfileDrawer from "../component/ProfileDrawer";
 import NotificationDrawer from "../component/NotificationDrawer";
+import JoinGameDrawer from "../component/JoinGameDrawer";
 
 const Home = () => {
   // state
   const [drawer, setDrawer] = React.useState(false);
   const [nDrawer, setNDrawer] = React.useState(false);
+  const [jDrawer, setJDrawer] = React.useState(false);
   // render
   return (
     <>
@@ -54,13 +56,16 @@ const Home = () => {
           your friend to invite and permit them to join. Two person can join in
           a game room only.
         </Typography>
-        <Button startIcon={<AiOutlineLink />}>join a game</Button>
+        <Button startIcon={<AiOutlineLink />} onClick={() => setJDrawer(true)}>
+          join a game
+        </Button>
         <Typography variant="caption" textAlign={"center"}>
           Join with an existing Room ID from anyone invited you to join.
         </Typography>
       </Stack>
       <ProfileDrawer drawer={drawer} setDrawer={setDrawer} />
       <NotificationDrawer drawer={nDrawer} setDrawer={setNDrawer} />
+      <JoinGameDrawer drawer={jDrawer} setDrawer={setJDrawer} />
     </>
   );
 };

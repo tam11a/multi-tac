@@ -44,7 +44,24 @@ const theme = createTheme({
   typography: {
     fontFamily: "'Quicksand', sans-serif",
   },
-  components: {},
+  components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          "& fieldset": {
+            borderColor: blackLight,
+            borderWidth: "2px",
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: `${primary}44`,
+          },
+          "&:hover.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: primary,
+          },
+        },
+      },
+    },
+  },
 });
 
 export default theme;

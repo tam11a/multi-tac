@@ -12,20 +12,22 @@ import {
 } from "@mui/material";
 import React from "react";
 import theme from "./theme";
-import { MdClose, MdOutlineSecurity } from "react-icons/md";
-import { FiUser } from "react-icons/fi";
+import { MdClose } from "react-icons/md";
+import { AiOutlineLink } from "react-icons/ai";
+import { IoGameControllerOutline } from "react-icons/io5";
 
-const ProfileDrawer = ({ drawer, setDrawer }) => {
+const JoinGameDrawer = ({ drawer, setDrawer }) => {
   return (
     <SwipeableDrawer
-      anchor="right"
+      anchor="bottom"
       open={drawer}
       onClose={() => setDrawer(false)}
       onOpen={() => setDrawer(true)}
       PaperProps={{
         sx: {
-          width: "90vw",
-          maxWidth: 450,
+          width: "100vw",
+          maxWidth: theme.breakpoints.values.md,
+          mx: "auto",
           background: theme.palette.background.main,
         },
       }}
@@ -45,15 +47,10 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
           <MdClose />
         </IconButton>
         <Typography variant="button" flexGrow={1}>
-          Profile
+          Join A Game
         </Typography>
-        <IconButton
-          color="primary"
-          component="span"
-          // onClick={() => setDrawer(false)}
-        >
-          <FiUser />
-          {/* <FiSettings /> */}
+        <IconButton color="primary" component="span">
+          <AiOutlineLink />
         </IconButton>
       </Stack>
       <Divider
@@ -64,10 +61,11 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
       />
       <List>
         <ListItem>
-          <Stack direction={"column"} width={"100%"}>
-            <ListItemText secondary={"Username"} />
-            <ListItemText primary={"Tam"} />
-          </Stack>
+          <Typography variant="body2">
+            Join with an existing Room ID from your friend who invited you to
+            join. If you are permitted to Join, you will be able to join else,
+            you have to wait till your friend gives you permission.
+          </Typography>
         </ListItem>
         <Divider
           sx={{
@@ -88,10 +86,10 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
             component="span"
             //onClick={() => setDrawer(false)}
           >
-            <MdOutlineSecurity />
+            <IoGameControllerOutline />
           </IconButton>
           <Typography variant="button" flexGrow={1}>
-            Account settings
+            Room Information
           </Typography>
         </Stack>
         <Divider
@@ -103,40 +101,17 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
         <form>
           <ListItem>
             <Stack direction={"column"} width={"100%"}>
-              <ListItemText secondary={"Current Password"} />
+              <ListItemText secondary={"Room ID or URL"} />
               <OutlinedInput
-                placeholder="Current Password"
+                placeholder="Room ID or URL"
                 fullWidth
                 sx={{ mt: 1 }}
-                type="password"
-              />
-            </Stack>
-          </ListItem>
-          <ListItem>
-            <Stack direction={"column"} width={"100%"}>
-              <ListItemText secondary={"New Password"} />
-              <OutlinedInput
-                placeholder="New Password"
-                fullWidth
-                sx={{ mt: 1 }}
-                type="password"
-              />
-            </Stack>
-          </ListItem>
-          <ListItem>
-            <Stack direction={"column"} width={"100%"}>
-              <ListItemText secondary={"Confirm New Password"} />
-              <OutlinedInput
-                placeholder="Confirm New Password"
-                fullWidth
-                sx={{ mt: 1 }}
-                type="password"
               />
             </Stack>
           </ListItem>
           <ListItem>
             <Button variant="contained" fullWidth type="submit">
-              Update Password
+              Join
             </Button>
           </ListItem>
         </form>
@@ -145,4 +120,4 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
   );
 };
 
-export default ProfileDrawer;
+export default JoinGameDrawer;
