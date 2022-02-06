@@ -1,0 +1,48 @@
+import { createTheme } from "@mui/material";
+
+// colors
+const primary = "#FFEB50";
+const secondary = "#FFFFFF";
+const black = "#282c34";
+const blackDark = "#15191e";
+
+// breakpoints
+const breakpoints = {
+  // for responsiveness
+  values: {
+    xs: 0,
+    xms: 380,
+    sm: 600, // Phone
+    md: 900, // Tablet/Laptop
+    lg: 1200, // Desktop
+    xl: 1536,
+  },
+};
+
+const theme = createTheme({
+  breakpoints: breakpoints,
+  palette: {
+    primary: {
+      main: primary,
+      contrastText: black,
+    },
+    secondary: {
+      main: secondary,
+      contrastText: black,
+    },
+    background: {
+      main: black,
+      dark: blackDark,
+    },
+    text: {
+      primary: secondary,
+      secondary: primary,
+    },
+  },
+  typography: {
+    fontFamily: "'Quicksand', sans-serif",
+  },
+  components: {},
+});
+
+export default theme;

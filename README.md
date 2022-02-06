@@ -15,16 +15,4 @@ A Multiplayer Tic Tac Toe Game
 2. ExpressJS
 3. Socket (socket.io v4)
 
-# Colors
-
----
-
-## | Name | Lighter | Darker |
-
-## | Yellow | #FFEB50 | #F7D139 |
-
-## | White | #FFFFFF | #FDFDFD |
-
-## | Black | #282c34 | #15191e |
-
 Live Host: https://multi-tac.netlify.app/
