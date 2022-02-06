@@ -7,12 +7,14 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import ProfileDrawer from "../component/ProfileDrawer";
 import NotificationDrawer from "../component/NotificationDrawer";
 import JoinGameDrawer from "../component/JoinGameDrawer";
+import HostGameDrawer from "../component/HostGameDrawer";
 
 const Home = () => {
   // state
   const [drawer, setDrawer] = React.useState(false);
   const [nDrawer, setNDrawer] = React.useState(false);
   const [jDrawer, setJDrawer] = React.useState(false);
+  const [hDrawer, setHDrawer] = React.useState(false);
   // render
   return (
     <>
@@ -50,7 +52,12 @@ const Home = () => {
         mx={"auto"}
         spacing={2}
       >
-        <Button startIcon={<IoCreateOutline />}>host new game</Button>
+        <Button
+          startIcon={<IoCreateOutline />}
+          onClick={() => setHDrawer(true)}
+        >
+          host new game
+        </Button>
         <Typography variant="caption" textAlign={"center"}>
           Create a new game. Share the Room URL or Room ID from the game with
           your friend to invite and permit them to join. Two person can join in
@@ -60,12 +67,15 @@ const Home = () => {
           join a game
         </Button>
         <Typography variant="caption" textAlign={"center"}>
-          Join with an existing Room ID from anyone invited you to join.
+          Join with an existing Room ID from your friend who invited you to
+          join. If you are permitted to Join, you will be able to join else, you
+          have to wait till your friend gives you permission.
         </Typography>
       </Stack>
       <ProfileDrawer drawer={drawer} setDrawer={setDrawer} />
       <NotificationDrawer drawer={nDrawer} setDrawer={setNDrawer} />
       <JoinGameDrawer drawer={jDrawer} setDrawer={setJDrawer} />
+      <HostGameDrawer drawer={hDrawer} setDrawer={setHDrawer} />
     </>
   );
 };
