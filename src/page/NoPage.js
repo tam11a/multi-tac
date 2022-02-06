@@ -15,10 +15,10 @@ const NoPage = () => {
         spacing={2}
       >
         <Box sx={{ "& img": { width: "90vw", maxWidth: "500px" }, mb: 3 }}>
-          <img src={SVG} />
+          <img src={SVG} alt={SVG} />
         </Box>
         <Typography variant="h4">No Page Found</Typography>
-        <Button startIcon={<AiOutlineLink />} component={Link} to="/">
+        <Button startIcon={<AiOutlineLink />} component={Link} to="/home">
           Go To Home Page
         </Button>
       </Stack>
