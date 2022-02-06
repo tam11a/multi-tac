@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#282C34;}
@@ -8,33 +8,27 @@
 	.st2{fill:#FFEB50;}
 	.st3{fill:#F7D139;}
 </style>
-<g id="Layer_1">
+<g id="Layer_1_1_">
 </g>
-<g id="Layer_2">
-	<g>
-		<rect x="0" class="st0" width="512" height="512"/>
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="202.1665" y1="197.8881" x2="507.9919" y2="516.7997">
-			<stop  offset="0" style="stop-color:#15191E"/>
-			<stop  offset="6.188380e-02" style="stop-color:#0E1114;stop-opacity:0.9257"/>
-			<stop  offset="0.1839" style="stop-color:#060709;stop-opacity:0.7791"/>
-			<stop  offset="0.3556" style="stop-color:#010202;stop-opacity:0.5728"/>
-			<stop  offset="0.8324" style="stop-color:#000000;stop-opacity:0"/>
-		</linearGradient>
-		<path class="st1" d="M319.3,130.3l-24.2-22.2l-42.5,35.8l-50-50.9l-6.3,101L93,202.5l116.3,116.3L93,329.5l181.8,181.8
-			C349,512,512,512,512,512s0-180-0.7-237.2L329.5,93L319.3,130.3z"/>
-		<path class="st2" d="M419,202.5v-20h-89.5V93h-20v89.5H202.5V93h-20v89.5H93v20h89.5v106.9H93v20h89.5V419h20v-89.5h106.9V419h20
-			v-89.5H419v-20h-89.5V202.5H419z M309.5,309.5H202.5V202.5h106.9V309.5z"/>
-		<polygon class="st3" points="419,202.5 419,182.5 329.5,182.5 329.5,93 309.5,93 309.5,182.5 256,182.5 256,202.5 309.5,202.5 
-			309.5,309.5 256,309.5 256,329.5 309.5,329.5 309.5,419 329.5,419 329.5,329.5 419,329.5 419,309.5 329.5,309.5 329.5,202.5 		"/>
-		<circle class="st3" cx="256" cy="255" r="40"/>
-		<path class="st2" d="M256,215C256,215,256,215,256,215l0,80c0,0,0,0,0,0c22.1,0,40-17.9,40-40S278.1,215,256,215z"/>
-		<polygon class="st2" points="295.1,108.1 280.9,93.9 256,118.9 231.1,93.9 216.9,108.1 241.9,133 216.9,157.9 231.1,172.1 
-			256,147.1 280.9,172.1 295.1,157.9 270.1,133 		"/>
-		<g>
-			<polygon class="st3" points="256,147.1 280.9,172.1 295.1,157.9 270.1,133 295.1,108.1 280.9,93.9 256,118.9 			"/>
-			<polygon class="st3" points="420.3,281.2 395.4,256.3 420.3,231.3 406.2,217.2 381.3,242.1 356.3,217.2 342.2,231.3 367.1,256.3 
-				342.2,281.2 356.3,295.3 381.3,270.4 406.2,295.3 			"/>
-		</g>
-	</g>
+<rect class="st0" width="512" height="512"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="202.1664" y1="316.1118" x2="507.9919" y2="-2.7997" gradientTransform="matrix(1 0 0 -1 0 514)">
+	<stop  offset="0" style="stop-color:#15191E"/>
+	<stop  offset="0.1919" style="stop-color:#010202;stop-opacity:0.5728"/>
+	<stop  offset="0.4913" style="stop-color:#000000;stop-opacity:0"/>
+</linearGradient>
+<path class="st1" d="M319.3,130.3l-24.2-22.2l-42.5,35.8l-50-50.9l-6.3,101L93,202.5l116.3,116.3L93,329.5l181.8,181.8
+	C349,512,512,512,512,512s0-180-0.7-237.2L329.5,93L319.3,130.3z"/>
+<path class="st2" d="M419,202.5v-20h-89.5V93h-20v89.5h-107V93h-20v89.5H93v20h89.5v106.9H93v20h89.5V419h20v-89.5h106.9V419h20
+	v-89.5H419v-20h-89.5v-107H419z M309.5,309.5h-107v-107h106.9v107H309.5z"/>
+<polygon class="st3" points="419,202.5 419,182.5 329.5,182.5 329.5,93 309.5,93 309.5,182.5 256,182.5 256,202.5 309.5,202.5 
+	309.5,309.5 256,309.5 256,329.5 309.5,329.5 309.5,419 329.5,419 329.5,329.5 419,329.5 419,309.5 329.5,309.5 329.5,202.5 "/>
+<circle class="st3" cx="256" cy="255" r="40"/>
+<path class="st2" d="M256,215L256,215v80l0,0c22.1,0,40-17.9,40-40S278.1,215,256,215z"/>
+<polygon class="st2" points="295.1,108.1 280.9,93.9 256,118.9 231.1,93.9 216.9,108.1 241.9,133 216.9,157.9 231.1,172.1 
+	256,147.1 280.9,172.1 295.1,157.9 270.1,133 "/>
+<g>
+	<polygon class="st3" points="256,147.1 280.9,172.1 295.1,157.9 270.1,133 295.1,108.1 280.9,93.9 256,118.9 	"/>
+	<polygon class="st3" points="420.3,281.2 395.4,256.3 420.3,231.3 406.2,217.2 381.3,242.1 356.3,217.2 342.2,231.3 367.1,256.3 
+		342.2,281.2 356.3,295.3 381.3,270.4 406.2,295.3 	"/>
 </g>
 </svg>
