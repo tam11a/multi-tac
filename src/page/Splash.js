@@ -32,31 +32,44 @@ const Splash = () => {
           <Typography variant="h4" sx={{ textTransform: "uppercase" }}>
             Multi Tac
           </Typography>
-          <Typography variant="subtitle2" sx={{ textTransform: "uppercase" }}>
-            Realtime Multiplayer Game
+          <Typography
+            variant="subtitle2"
+            sx={{ textTransform: "uppercase" }}
+            color={"primary"}
+          >
+            Host . Invite . Play!
           </Typography>
           <Box sx={{ mb: 2 }}></Box>
+        </Stack>
+        <Stack
+          direction={"column"}
+          alignItems="center"
+          justifyContent={"center"}
+          spacing={2}
+        >
           <Button
-            variant="outlined"
+            variant="contained"
             startIcon={<VscDebugStart />}
             // component={Link}
-            sx={{ borderRadius: "100px" }}
+            sx={{ borderRadius: "100px", px: 3 }}
             // to="/home"
             fullWidth
             onClick={() => setLDrawer(true)}
           >
             Get Started
           </Button>
+          <Button
+            startIcon={<AiOutlineLink style={{ fontSize: "1rem" }} />}
+            // endIcon={<AiOutlineLink style={{ fontSize: "1rem" }} />}
+            color="secondary"
+            component={"a"}
+            target="_blank"
+            href="https://www.facebook.com/ibrahimsadik.tamim/"
+            sx={{ fontSize: "0.7rem" }}
+          >
+            Powered By TAM
+          </Button>
         </Stack>
-        <Button
-          startIcon={<AiOutlineLink style={{ fontSize: "1rem" }} />}
-          component={"a"}
-          target="_blank"
-          href="https://www.facebook.com/ibrahimsadik.tamim/"
-          sx={{ fontSize: "0.7rem" }}
-        >
-          Powered By TAM
-        </Button>
       </Stack>
       <LoginDrawer
         drawer={lDrawer}
