@@ -14,6 +14,7 @@ import React from "react";
 import theme from "./theme";
 import { MdClose, MdOutlineCreateNewFolder } from "react-icons/md";
 import { FiUser } from "react-icons/fi";
+import handleSubmit from "../utilities/handleSubmit";
 
 const RegisterDrawer = ({ drawer, setDrawer, toDrawer }) => {
   return (
@@ -21,7 +22,6 @@ const RegisterDrawer = ({ drawer, setDrawer, toDrawer }) => {
       anchor="bottom"
       open={drawer}
       onClose={() => setDrawer(false)}
-      onOpen={() => setDrawer(true)}
       PaperProps={{
         sx: {
           width: "100vw",
@@ -96,11 +96,16 @@ const RegisterDrawer = ({ drawer, setDrawer, toDrawer }) => {
             borderWidth: "1px",
           }}
         />
-        <form>
+        <form method="POST" onSubmit={(e) => console.log(handleSubmit(e))}>
           <ListItem>
             <Stack direction={"column"} width={"100%"}>
               <ListItemText secondary={"Username"} />
-              <OutlinedInput placeholder="Username" fullWidth sx={{ mt: 1 }} />
+              <OutlinedInput
+                placeholder="Username"
+                fullWidth
+                sx={{ mt: 1 }}
+                name={"uname"}
+              />
             </Stack>
           </ListItem>
           <ListItem>
@@ -111,6 +116,7 @@ const RegisterDrawer = ({ drawer, setDrawer, toDrawer }) => {
                 fullWidth
                 sx={{ mt: 1 }}
                 type={"password"}
+                name={"password"}
               />
             </Stack>
           </ListItem>
@@ -122,6 +128,7 @@ const RegisterDrawer = ({ drawer, setDrawer, toDrawer }) => {
                 fullWidth
                 sx={{ mt: 1 }}
                 type={"password"}
+                name={"cpassword"}
               />
             </Stack>
           </ListItem>

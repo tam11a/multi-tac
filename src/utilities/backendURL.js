@@ -1,2 +1,2 @@
 export const backendURL =
-  process.env.BACKEND_URL || "http://localhost:3000/api";
+  process.env.BACKEND_URL || "https://mt-server.netlify.app/api";

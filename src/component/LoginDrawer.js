@@ -4,6 +4,7 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemIcon,
   ListItemText,
   OutlinedInput,
   Stack,
@@ -13,9 +14,38 @@ import {
 import React from "react";
 import theme from "./theme";
 import { MdClose } from "react-icons/md";
-import { FiLogIn, FiUser } from "react-icons/fi";
+import { FiAlertTriangle, FiLogIn, FiUser } from "react-icons/fi";
+import handleSubmit from "./../utilities/handleSubmit";
+import { postFunc } from "../utilities/postFunc";
 
-const LoginDrawer = ({ drawer, setDrawer, toDrawer }) => {
+const LoginDrawer = ({ drawer, setDrawer, toDrawer, setToken }) => {
+  // state
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [isError, setIsError] = React.useState();
+  // func
+  const login = (e) => {
+    setIsLoading(true);
+    setIsError();
+    const params = handleSubmit(e);
+    if (params.uname && params.password) {
+      postFunc("/login", params)
+        .then((data) => data.json())
+        .then((data) => {
+          if (data.success) {
+            console.log(data);
+          } else {
+            setIsError("Invalid Username or Password.");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      setIsError("Username & Password is Required for Login.");
+    }
+    setIsLoading(false);
+  };
+
   return (
     <SwipeableDrawer
       anchor="bottom"
@@ -95,11 +125,18 @@ const LoginDrawer = ({ drawer, setDrawer, toDrawer }) => {
             borderWidth: "1px",
           }}
         />
-        <form>
+
+        <form method="POST" onSubmit={(e) => login(e)}>
           <ListItem>
             <Stack direction={"column"} width={"100%"}>
               <ListItemText secondary={"Username"} />
-              <OutlinedInput placeholder="Username" fullWidth sx={{ mt: 1 }} />
+              <OutlinedInput
+                placeholder="Username"
+                fullWidth
+                sx={{ mt: 1 }}
+                name={"uname"}
+                autoComplete={"off"}
+              />
             </Stack>
           </ListItem>
           <ListItem>
@@ -110,11 +147,27 @@ const LoginDrawer = ({ drawer, setDrawer, toDrawer }) => {
                 fullWidth
                 sx={{ mt: 1 }}
                 type={"password"}
+                name={"password"}
               />
             </Stack>
           </ListItem>
+          {isError ? (
+            <ListItem sx={{ justifyContent: "center" }}>
+              <IconButton color="error" sx={{ mr: 1 }}>
+                <FiAlertTriangle />
+              </IconButton>
+              <Typography variant="overline">{isError}</Typography>
+            </ListItem>
+          ) : (
+            <></>
+          )}
           <ListItem>
-            <Button variant="contained" fullWidth type="submit">
+            <Button
+              variant="contained"
+              fullWidth
+              type="submit"
+              disabled={isLoading}
+            >
               Login
             </Button>
           </ListItem>

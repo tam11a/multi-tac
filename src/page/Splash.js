@@ -6,7 +6,7 @@ import { AiOutlineLink } from "react-icons/ai";
 import LoginDrawer from "../component/LoginDrawer";
 import RegisterDrawer from "../component/RegisterDrawer";
 
-const Splash = () => {
+const Splash = ({ setToken }) => {
   // state
   const [lDrawer, setLDrawer] = React.useState(false);
   const [rDrawer, setRDrawer] = React.useState(false);
@@ -37,7 +37,7 @@ const Splash = () => {
             sx={{ textTransform: "uppercase" }}
             color={"primary"}
           >
-            Host . Invite . Play!
+            H o s t . I n v i t e . P l a y !
           </Typography>
           <Box sx={{ mb: 2 }}></Box>
         </Stack>
@@ -75,11 +75,13 @@ const Splash = () => {
         drawer={lDrawer}
         setDrawer={setLDrawer}
         toDrawer={setRDrawer}
+        setToken={setToken}
       />
       <RegisterDrawer
         drawer={rDrawer}
         setDrawer={setRDrawer}
         toDrawer={setLDrawer}
+        setToken={setToken}
       />
     </>
   );
