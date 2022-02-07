@@ -13,7 +13,7 @@ import {
 import React from "react";
 import theme from "./theme";
 import { MdClose, MdOutlineSecurity } from "react-icons/md";
-import { FiUser } from "react-icons/fi";
+import { FiLogOut } from "react-icons/fi";
 
 const ProfileDrawer = ({ drawer, setDrawer }) => {
   return (
@@ -48,11 +48,11 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
           Profile
         </Typography>
         <IconButton
-          color="primary"
+          color="error"
           component="span"
           // onClick={() => setDrawer(false)}
         >
-          <FiUser />
+          <FiLogOut />
           {/* <FiSettings /> */}
         </IconButton>
       </Stack>
@@ -140,6 +140,23 @@ const ProfileDrawer = ({ drawer, setDrawer }) => {
             </Button>
           </ListItem>
         </form>
+        <Divider
+          sx={{
+            borderColor: theme.palette.background.light,
+            borderWidth: "1px",
+            my: 2,
+          }}
+        />
+        <ListItem>
+          <Button
+            variant="outlined"
+            color="error"
+            fullWidth
+            startIcon={<FiLogOut />}
+          >
+            Logout
+          </Button>
+        </ListItem>
       </List>
     </SwipeableDrawer>
   );
