@@ -12,10 +12,10 @@ import {
 } from "@mui/material";
 import React from "react";
 import theme from "./theme";
-import { MdClose } from "react-icons/md";
-import { IoCreateOutline, IoGameControllerOutline } from "react-icons/io5";
+import { MdClose, MdOutlineCreateNewFolder } from "react-icons/md";
+import { FiUser } from "react-icons/fi";
 
-const HostGameDrawer = ({ drawer, setDrawer }) => {
+const RegisterDrawer = ({ drawer, setDrawer, toDrawer }) => {
   return (
     <Drawer
       anchor="bottom"
@@ -39,10 +39,10 @@ const HostGameDrawer = ({ drawer, setDrawer }) => {
         spacing={2}
       >
         <IconButton color="primary" component="span">
-          <IoCreateOutline />
+          <MdOutlineCreateNewFolder />
         </IconButton>
         <Typography variant="button" flexGrow={1}>
-          Host New Game
+          Create New Account
         </Typography>
         <IconButton
           color="primary"
@@ -61,9 +61,8 @@ const HostGameDrawer = ({ drawer, setDrawer }) => {
       <List>
         <ListItem>
           <Typography variant="body2">
-            Create a new game. Share the Room URL or Room ID from the game with
-            your friend to invite and permit them to join. Two person can join
-            in a game room only.
+            Create User Account with Unique & Short Username and use a Memorable
+            Password.
           </Typography>
         </ListItem>
         <Divider
@@ -85,10 +84,10 @@ const HostGameDrawer = ({ drawer, setDrawer }) => {
             component="span"
             //onClick={() => setDrawer(false)}
           >
-            <IoGameControllerOutline />
+            <FiUser />
           </IconButton>
           <Typography variant="button" flexGrow={1}>
-            Room Information
+            User Information
           </Typography>
         </Stack>
         <Divider
@@ -100,23 +99,59 @@ const HostGameDrawer = ({ drawer, setDrawer }) => {
         <form>
           <ListItem>
             <Stack direction={"column"} width={"100%"}>
-              <ListItemText secondary={"Create New Room ID"} />
+              <ListItemText secondary={"Username"} />
+              <OutlinedInput placeholder="Username" fullWidth sx={{ mt: 1 }} />
+            </Stack>
+          </ListItem>
+          <ListItem>
+            <Stack direction={"column"} width={"100%"}>
+              <ListItemText secondary={"Create Password"} />
               <OutlinedInput
-                placeholder="Create New Room ID"
+                placeholder="Create Password"
                 fullWidth
                 sx={{ mt: 1 }}
+                type={"password"}
+              />
+            </Stack>
+          </ListItem>
+          <ListItem>
+            <Stack direction={"column"} width={"100%"}>
+              <ListItemText secondary={"Confirm Password"} />
+              <OutlinedInput
+                placeholder="Confirm Password"
+                fullWidth
+                sx={{ mt: 1 }}
+                type={"password"}
               />
             </Stack>
           </ListItem>
           <ListItem>
             <Button variant="contained" fullWidth type="submit">
-              Host
+              Sign Up
             </Button>
           </ListItem>
         </form>
+        <Divider
+          sx={{
+            borderColor: theme.palette.background.light,
+            borderWidth: "1px",
+            mt: 2,
+          }}
+        />
+        <ListItem>
+          <Button
+            fullWidth
+            onClick={() => {
+              setDrawer(false);
+              toDrawer(true);
+            }}
+          >
+            Already have an Account?
+          </Button>
+        </ListItem>
       </List>
     </Drawer>
   );
 };
 
-export default HostGameDrawer;
+export default RegisterDrawer;

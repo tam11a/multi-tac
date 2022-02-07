@@ -1,11 +1,16 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import SVG from "../assets/logo.svg";
-import { Link } from "react-router-dom";
 import { VscDebugStart } from "react-icons/vsc";
 import { AiOutlineLink } from "react-icons/ai";
+import LoginDrawer from "../component/LoginDrawer";
+import RegisterDrawer from "../component/RegisterDrawer";
 
 const Splash = () => {
+  // state
+  const [lDrawer, setLDrawer] = React.useState(false);
+  const [rDrawer, setRDrawer] = React.useState(false);
+  //
   return (
     <>
       <Stack
@@ -15,7 +20,7 @@ const Splash = () => {
         justifyContent={"space-evenly"}
         spacing={2}
       >
-        <Box sx={{ "& img": { width: "90vw", maxWidth: "500px" } }}>
+        <Box sx={{ "& img": { width: "80vw", maxWidth: "400px" } }}>
           <img src={SVG} alt={SVG} />
         </Box>
         <Stack
@@ -34,10 +39,11 @@ const Splash = () => {
           <Button
             variant="outlined"
             startIcon={<VscDebugStart />}
-            component={Link}
+            // component={Link}
             sx={{ borderRadius: "100px" }}
-            to="/home"
+            // to="/home"
             fullWidth
+            onClick={() => setLDrawer(true)}
           >
             Get Started
           </Button>
@@ -52,6 +58,16 @@ const Splash = () => {
           Powered By TAM
         </Button>
       </Stack>
+      <LoginDrawer
+        drawer={lDrawer}
+        setDrawer={setLDrawer}
+        toDrawer={setRDrawer}
+      />
+      <RegisterDrawer
+        drawer={rDrawer}
+        setDrawer={setRDrawer}
+        toDrawer={setLDrawer}
+      />
     </>
   );
 };
